@@ -1,0 +1,91 @@
+.slide{
+    width:100%;
+    height:500px;
+    display: block;
+    margin-top: 10px;
+}
+.outer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width:100%
+    
+}
+.left{
+    margin-left: 10px;
+    width:80%
+}
+.right{
+    margin-left: 100px;
+    width:50%
+}
+.payment-form-button{
+    font-size: 25px;
+    position: absolute;
+    margin-top:-100px;
+    left: 45%;
+}
+.addItem{
+    position:absolute;
+    cursor:pointer;
+     margin-left:4%;
+     margin-top:-10px
+}
+.plusItem{
+    cursor:pointer;
+    width:15px;
+    text-align:center;
+     margin-left:4%;
+     position:absolute;
+     margin-top:-10px
+}
+.plusItem-out{
+    cursor:pointer;
+    width:15px;
+    text-align:center;
+     margin-left:6%;
+     position:absolute;
+     margin-top:-10px
+}
+.minusItem{
+    cursor:pointer;
+    width:15px;
+    text-align:center;
+     margin-left:8%;
+     position:absolute;
+     margin-top:-10px
+}
+@media screen and (max-width: 800px) {
+    .addItem{
+        position:absolute;
+        cursor:pointer;
+         margin-left:8%;
+         margin-top:-10px
+    }
+    .plusItem{
+        cursor:pointer;
+        width:15px;
+        text-align:center;
+         margin-left:7%;
+         position:absolute;
+         margin-top:-10px
+    }
+    .plusItem-out{
+        cursor:pointer;
+        width:25px;
+        
+        text-align:center;
+         margin-left:10%;
+         position:absolute;
+         margin-top:-10px
+    }
+    .minusItem{
+        cursor:pointer;
+        width:15px;
+        text-align:center;
+         margin-left:15%;
+         position:absolute;
+         margin-top:-10px
+    }
+
+}

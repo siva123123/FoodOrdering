@@ -1,0 +1,80 @@
+.filter{
+    display: flex;
+}
+.left-side{
+    border: 1px solid transparent;
+    box-shadow: 1px 1px 2px 2px;
+    height: auto;
+    width: 30%;
+    font-size: 20px;
+}
+.Right-side{
+    border: 1px solid transparent;
+    height: auto;
+    width: 80%;
+    margin-left: 20px;
+}
+.right-list{
+   box-shadow: 1px 1px 25px 2px lightgray;
+    background-color:lightgray;
+    height: auto;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.card{
+    
+    border:1px solid transparent;
+    height: auto;
+    width: 95%;
+    margin: auto;
+    margin-top: 5px;
+}
+.icon{
+    display: none;
+}
+.left-margin{
+    margin-left:20px;
+}
+.left-option{
+    margin-left:15px;
+     margin-bottom:15px;
+      font-size:20px;
+      width:80%
+}
+.imgae-right{
+    position:absolute
+}
+.text-right{
+    margin-left:150px
+}
+.line-right{
+    margin-top:20px
+}
+@media screen and (max-width: 800px) {
+    .left-margin{
+        width:95%;
+        margin-left:5px;
+    }
+    .left-option{
+    margin-left:0px;
+    width: 90%;
+    }
+    .Right-side{
+        border: 1px solid transparent;
+        height: auto;
+        width: 90%;
+        margin-left: 10px;
+    }
+    .imgae-right{
+        position: relative;
+        width: auto;
+        height: 150px;
+    }
+    .text-right{
+        margin-left:5px
+    }
+    .line-right{
+        margin-top:-10px
+    }
+}
