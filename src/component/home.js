@@ -1,19 +1,16 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import Wallpaper from "./wallpaper";
 import Quicksearch from "./quicksearch";
 import axios from 'axios';
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      locationData: [],
-      mealsData: [],
-    };
-  }
+const Home = () => {
+  const [locationData, setLocationData] = useState([]);
+  const [mealsData, setMealsData] = useState([]);
 
-  componentDidMount() {
-    sessionStorage.clear()
+  useEffect(() => {
+    sessionStorage.clear();
+    
+    // Fetch location data
     axios({
       url: 'http://localhost:8060/location',
       method: 'GET',
@@ -22,29 +19,28 @@ class Home extends Component {
       }
     })
     .then(res => {
-      this.setState({ locationData: res.data.location });
+      setLocationData(res.data.location);
     })
     .catch(err => console.log(err));
 
+    // Fetch meals data
     axios({
       url: 'http://localhost:8060/meals',
       method: 'GET',
       headers: { "Content-Type": 'application/json' }
     })
-      .then(res => {
-        this.setState({ mealsData: res.data.meals });
-      })
-      .catch(err => console.log(err));
-  }
-
-  render() {
-    return (
-      <div>
-        <Wallpaper ddlocations={this.state.locationData} />
-        <Quicksearch mealsData={this.state.mealsData} />
-      </div>
-    );
-  }
-}
+    .then(res => {
+      setMealsData(res.data.meals);
+    })
+    .catch(err => console.log(err));
+  }, []); // Empty dependency array means this effect runs once on mount
+console.log("0000")
+  return (
+    <div>
+      <Wallpaper ddlocations={locationData} />
+      <Quicksearch mealsData={mealsData} />
+    </div>
+  );
+};
 
 export default Home;

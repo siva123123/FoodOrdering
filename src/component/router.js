@@ -3,19 +3,19 @@ import Home from "./home";
 import Detail from "./detail";
 import Header from "./header";
 import Filter from "./filter";
-import { BrowserRouter,Switch, Route } from "react-router-dom/cjs/react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function Router() {
+  console.log("first");
   return (
     <BrowserRouter>
       <Header />
-      <Switch>
-        
-        <Route exact path="/details" component={Detail} />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/filter" component={Filter} /> {/* Corrected the path prop */}
-      </Switch>
+      <Routes>
+        <Route path="/details" element={<Detail />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/filter" element={<Filter />} />
+      </Routes>
     </BrowserRouter>
   );
 }
